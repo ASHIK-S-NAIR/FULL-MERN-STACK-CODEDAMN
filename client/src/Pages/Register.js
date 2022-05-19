@@ -11,7 +11,7 @@ function Register() {
   async function registerUser (event) {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:8003/api/register", {
+      const response = await fetch("/api/register", {
       method: "POST",
       body: JSON.stringify({
         name,
