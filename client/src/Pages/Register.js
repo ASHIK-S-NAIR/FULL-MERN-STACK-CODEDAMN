@@ -1,5 +1,7 @@
 import React,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API } from '../backend';
+
 
 function Register() {
   const [name, setName] = useState('');
@@ -9,9 +11,12 @@ function Register() {
   const navigate = useNavigate();
 
   async function registerUser (event) {
+    console.log(API);
     event.preventDefault();
     try {
-      const response = await fetch("/api/register", {
+      // const response = await fetch("http://localhost:8003/api/register", {
+      // const response = await fetch(`${API}/register`, {
+      const response = await fetch(`http://64.227.103.45:80/api/register`, {
       method: "POST",
       body: JSON.stringify({
         name,
