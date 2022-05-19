@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API } from '../backend';
+
 
 function Login() {
 
@@ -11,7 +13,8 @@ function Login() {
   async function loginUser(event) {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:8003/api/login", {
+      // const response = await fetch("http://localhost:8003/api/login", {
+      const response = await fetch(`${API}/login`, {
         method: "POST",
         body: JSON.stringify({
           email,
@@ -29,8 +32,8 @@ function Login() {
         localStorage.setItem("token", data.token);
 
         alert("Login Successfull");
-        window.location.href = "/dashboard";
-        // navigate("/dashboard")
+        // window.location.href = "/dashboard";
+        navigate("/dashboard")
       } else {
         alert("Please check your username and password");
       }

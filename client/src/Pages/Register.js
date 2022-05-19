@@ -16,7 +16,7 @@ function Register() {
     try {
       // const response = await fetch("http://localhost:8003/api/register", {
       // const response = await fetch(`${API}/register`, {
-      const response = await fetch(`http://64.227.103.45:80/api/register`, {
+      const response = await fetch("/api/register", {
       method: "POST",
       body: JSON.stringify({
         name,
