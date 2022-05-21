@@ -14,7 +14,7 @@ function Login() {
     event.preventDefault();
     try {
       // const response = await fetch("http://localhost:8003/api/login", {
-      const response = await fetch(`/login`, {
+      const response = await fetch(`/api/login`, {
         method: "POST",
         body: JSON.stringify({
           email,
